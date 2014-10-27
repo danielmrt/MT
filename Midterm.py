@@ -23,32 +23,43 @@ delMom=burn_rate*burn_time*Exhaust_vel #AKA delta P
 F_thrust=delMom/burn_time
 Anavel=Exhaust_vel*np.log((Empty_mass+Max_fuel)/Empty_mass)
 print Anavel
+Positiony=Anavel*burn_time
+# Graph equations
+
+dt=000000000001
+t=np.linspace(0,burn_time-dt, 10000)
+ypost=Anavel*t
+Ft_thrust=F_thrust*np.linspace(1,1,10000)
+VAna=Exhaust_vel*np.log((Empty_mass+Max_fuel)/(Empty_mass-(burn_rate*t)))
+velT=delMom/delmass*t
+
 # Gravity
 gs=9.8
 Rade=6.37*10**6
-print Rade
+g=gs/(1+(Positiony/Rade))**2
+print g
+gt=gs/(1+ypost/Rade)**2
+print gt
 # Plots for position, velocity(Analytical and not), and force with respect to time
-dt=000000000001
-t=np.linspace(0,burn_time-dt, 10000)
+
 #Force
-Ft_thrust=F_thrust*np.linspace(1,1,10000)
+
 plt.subplot(3,1,1)
-plt.plot(t,Ft_thrust,"g")
+plt.plot(t,Ft_thrust,"b")
+plt.plot(t,gt,"r")
 plt.title("Force [N] vs. Time [s]")
 plt.ylabel("N")
-plt.show()
+
 #velocity
-VAna=Exhaust_vel*np.log((Empty_mass+Max_fuel)/(Empty_mass-(burn_rate*t)))
-velT=delMom/delmass*t
+plt.subplot(3,1,2)
 plt.plot(t,velT,"b")
 plt.plot(t,VAna, "r")
-plt.subplot(3,1,2)
 plt.title("Velocity [m/s] vs. Time [s]")
 plt.ylabel("[m/s]")
-plt.show()
+
 #position
-Positiony=Anavel*burn_time
-ypost=Anavel*t
+
+
 print Positiony
 plt.subplot(3,1,3)
 plt.plot(t,ypost,"y")
