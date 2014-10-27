@@ -31,28 +31,28 @@ dt=000000000001
 t=np.linspace(0,burn_time-dt, 10000)
 #Force
 Ft_thrust=F_thrust*np.linspace(1,1,10000)
+plt.subplot(3,1,1)
 plt.plot(t,Ft_thrust,"g")
-plt.title("Force vs. Time")
-plt.xlabel("time")
-plt.ylabel("Force")
+plt.title("Force [N] vs. Time [s]")
+plt.ylabel("N")
 plt.show()
 #velocity
 VAna=Exhaust_vel*np.log((Empty_mass+Max_fuel)/(Empty_mass-(burn_rate*t)))
 velT=delMom/delmass*t
 plt.plot(t,velT,"b")
 plt.plot(t,VAna, "r")
-plt.title("Velocity vs. Time")
-plt.xlabel("time in seconds")
-plt.ylabel("Velocity in m/s")
+plt.subplot(3,1,2)
+plt.title("Velocity [m/s] vs. Time [s]")
+plt.ylabel("[m/s]")
 plt.show()
 #position
 Positiony=Anavel*burn_time
 ypost=Anavel*t
 print Positiony
+plt.subplot(3,1,3)
 plt.plot(t,ypost,"y")
-plt.title("Height vs Time")
-plt.xlabel("Time")
-plt.ylabel("Height")
+plt.title("Height [m/s] vs Time [s]")
+plt.ylabel("m")
 plt.show()
 
 
