@@ -24,8 +24,9 @@ F_thrust=delMom/burn_time
 Anavel=Exhaust_vel*np.log((Empty_mass+Max_fuel)/Empty_mass)
 print Anavel
 # Gravity
-
- 
+gs=9.8
+Rade=6.37*10**6
+print Rade
 # Plots for position, velocity(Analytical and not), and force with respect to time
 dt=000000000001
 t=np.linspace(0,burn_time-dt, 10000)
