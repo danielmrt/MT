@@ -39,7 +39,7 @@ Rade=6.37*10**6
 g=gs/(1+(Positiony/Rade))**2
 print g
 gt=gs/(1+ypost/Rade)**2
-print gt
+VAna2=VAna-gs*t
 # Plots for position, velocity(Analytical and not), and force with respect to time
 
 #Force
@@ -54,6 +54,7 @@ plt.ylabel("N")
 plt.subplot(3,1,2)
 plt.plot(t,velT,"b")
 plt.plot(t,VAna, "r")
+plt.plot(t,VAna2,"k")
 plt.title("Velocity [m/s] vs. Time [s]")
 plt.ylabel("[m/s]")
 
