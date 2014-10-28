@@ -45,18 +45,18 @@ for t in t_1:
         v1 += h*a(t)
         h1 += h*v1
     else:										
-        h_1.append(h)
+        h_1.append(h1)
         v_1.append(v1)				
         h1 += h*v1
         
 # height vs. time
 plt.subplot(3,1,1)
-plt.plot(t_1, h_1, label = 'height')
+plt.plot(t_1, h_1, label = 'height - thrust')
 plt.legend(loc=2)
 plt.show()
 # velocity vs. time
 plt.subplot(3,1,2)
-plt.plot(t_1, v_1, label = 'velocity')
+plt.plot(t_1, v_1, label = 'velocity - thrust')
 plt.legend(loc=2)
 plt.show()
 #
@@ -95,11 +95,11 @@ for t in t_1:
 
 # height vs. time
 plt.subplot(3,1,1)
-plt.plot(t_1, h_1, label = 'height', color = 'red')
+plt.plot(t_1, h_1, label = 'height - gravity', color = 'red')
 plt.legend(loc=2)
 
 # velocity vs. time
 plt.subplot(3,1,2)
-plt.plot(t_1, v_1, label = 'velocity', color = 'red')
+plt.plot(t_1, v_1, label = 'velocity gravity', color = 'red')
 plt.legend(loc=2)
 plt.show()
