@@ -24,6 +24,7 @@ F_thrust=delMom/burn_time
 Anavel=Exhaust_vel*np.log((Empty_mass+Max_fuel)/Empty_mass)
 print Anavel
 Positiony=Anavel*burn_time
+
 # Graph equations
 
 dt=000000000001
@@ -40,6 +41,10 @@ g=gs/(1+(Positiony/Rade))**2
 print g
 gt=gs/(1+ypost/Rade)**2
 VAna2=VAna-gs*t
+
+#Air Resistence
+
+
 # Plots for position, velocity(Analytical and not), and force with respect to time
 
 #Force
@@ -59,7 +64,6 @@ plt.title("Velocity [m/s] vs. Time [s]")
 plt.ylabel("[m/s]")
 
 #position
-
 
 print Positiony
 plt.subplot(3,1,3)
