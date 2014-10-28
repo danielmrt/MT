@@ -17,5 +17,6 @@ m_t= maxfuel_mass + emp_mass
 #Rocket thrust
 # F = ma //  F/m = a
 # F = Thrust , by equation 6.7b F = burn rate * exaust velocity
+# We are losing mass each second so ( - burn rate * t )
 def a(t):
-    
+    return (burn_rate * exaust_v / m_t - burn_rate*t)
