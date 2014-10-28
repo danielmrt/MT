@@ -40,6 +40,7 @@ gs=9.81
 Rade=6.37*10**6
 gt=gs/(1+ypost/Rade)**2
 Vana2=VAna-gs*t
+
 # Air resistance
 Temp_Lapse = 0.0065
 Press_Sea = 1.01 * 10 ** 5
@@ -54,7 +55,6 @@ Forced=.5*Pressure*Area*drag_co*(Vana2)**2
 # Plots for position, velocity(Analytical and not), and force with respect to time
 
 #Force
-
 plt.subplot(3,1,1)
 plt.plot(t,Forced,"g")
 plt.plot(t,Ft_thrust,"b")
@@ -64,16 +64,12 @@ plt.ylabel("N")
 
 #velocity
 plt.subplot(3,1,2)
-plt.plot(t,velT,"b")
 plt.plot(t,VAna, "r")
 plt.plot(t,Vana2,"k")
 plt.title("Velocity [m/s] vs. Time [s]")
 plt.ylabel("[m/s]")
 
 #position
-
-
-
 plt.subplot(3,1,3)
 plt.plot(t,ypost,"y")
 plt.title("Height [m/s] vs Time [s]")
