@@ -4,6 +4,7 @@ Created on Mon Oct 27 14:54:21 2014
 
 @author: Chris
 """
+import visual as vis
 import numpy as np
 import matplotlib.pyplot as plt
 #Initial conditions.
@@ -76,6 +77,14 @@ plt.title("Height [m/s] vs Time [s]")
 plt.ylabel("m")
 plt.show()
 
+moon_d= 384400000
 
+Earth = vis.sphere(pos=[0,-355,0], radius = 100, material = vis.materials.earth)
+ISS = vis.sphere(pos = [0, 0, 0], radius = 2, color=vis.color.green)
+rocket = vis.cone(pos=[0, 0, 0], axis = (0, 10, 0), radius = 2, color=vis.color.red)
+moon =  vis.sphere(pos = [0, 400, 0], radius = 10,  color=vis.color.white)
 
-
+       
+for rk in ypost/10:
+    vis.rate (1000)
+    rocket.pos.y = (rk/1000)-255        
